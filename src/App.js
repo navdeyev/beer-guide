@@ -1,11 +1,13 @@
 import React from 'react';
-import './App.css';
+import {Container} from '@material-ui/core';
+
+import {BeerContainer} from './containers/BeerContainer';
 
 function App() {
     return (
-        <div className="App">
-            Content goes here
-        </div>
+        <Container>
+            <BeerContainer/>
+        </Container>
     );
 }
 
