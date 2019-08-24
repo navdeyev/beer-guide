@@ -12,7 +12,9 @@
     "redux-saga": "^1.0.5"
   },
   "devDependencies": {
-    "redux-devtools-extension": "^2.13.8"
+    "jest-fetch-mock": "^2.1.2",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-saga-test-plan": "^4.0.0-beta.4"
   },
   "scripts": {
     "start": "react-scripts start",
