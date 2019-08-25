@@ -1,3 +1,24 @@
+## General comments
+* The project was initialised with create-react-app, which means all the build scripts are provided by react-scripts.
+* Using material-ui was a requirement, this is my first attempt at it.
+* Some elements in the layout have 'data-qa' attributes assigned to them. I've used this attribute to access the rendered data from the tests using Enzyme. In future these attributes can be used in automated acceptance tests build for example with Selenium or TestCafe.
+* Task description did not mention mobile devices and pixel-perfect layout, so no support for mobile devises is provided.
+* Task description did not mention any ADA requirements.
+
+## Areas of improvement
+### UI
+* Provide special layout for mobile devices
+* Add screen-reader support
+* Consider using specialised material-ui components to give the user nicer feedback in negative scenarios
+
+#### Code and Project setup
+* Add automated UI tests with Selenium or TestCafe, for example
+* Consider using Flow static type annotations or migrate to TypeScript
+* Consider adding jest snapshot testing.
+* Consider changing the way files are imported, right now project uses relative paths with a lot of jumping from directory to directory. As the project grows, handling more and more complex paths for file inclusion will become tedious. It would be nicer to use imports relative to the main package. 
+* Verify the built bundle and address performance issues, if any
+
+##
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
