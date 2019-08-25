@@ -32,7 +32,7 @@ export const BeerTable = ({beers}) => {
         );
     } else {
         return (
-            <Box align="center" data-qa="no-data">No beers found</Box>
+            <Box align="center" data-qa="no-data" color="text.primary">No beers found</Box>
         );
     }
 };
