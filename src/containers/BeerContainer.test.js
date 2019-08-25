@@ -1,5 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 import {LoadingStates} from '../domains/beer/beerReducer';
 import {_BeerContainer, mapStateToProps} from './BeerContainer';
@@ -15,16 +16,14 @@ describe('BeerContainer', () => {
             const rendered = shallow(<_BeerContainer {...props} loadingState={LoadingStates.NOT_STARTED}/>);
             const beerForm = rendered.find(BeerForm);
             expect(beerForm.exists()).toBe(true);
-            expect(rendered.find({'data-qa': 'loading'}).exists()).toBe(false);
+            expect(rendered.find(LinearProgress).exists()).toBe(false);
             expect(rendered.find({'data-qa': 'error'}).exists()).toBe(false);
             expect(rendered.find(BeerTable).exists()).toBe(false);
         });
 
-        it('renders loading text when loading state is LOADING', () => {
+        it('renders CircularProgress when loading state is LOADING', () => {
             const rendered = shallow(<_BeerContainer {...props} loadingState={LoadingStates.LOADING}/>);
-            const boxComponent = rendered.find({'data-qa': 'loading'});
-            expect(boxComponent.exists()).toBe(true);
-            expect(boxComponent.text()).toBe('Loading');
+            expect(rendered.find(LinearProgress).exists()).toBe(true);
         });
 
         it('renders error text when loading state is ERROR', () => {

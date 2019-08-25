@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Box} from '@material-ui/core';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 import * as actions from '../domains/beer/beerActions';
 import {LoadingStates} from '../domains/beer/beerReducer';
@@ -12,9 +13,10 @@ export const _BeerContainer = ({findBeer, loadingState, beers}) => {
     return (
         <Box>
             <BeerForm onSubmit={findBeer}/>
-            {loadingState === LoadingStates.LOADING && <Box data-qa="loading" align="center">Loading</Box>}
+            {loadingState === LoadingStates.LOADING && <LinearProgress color="primary"/>}
             {loadingState === LoadingStates.COMPLETE && <BeerTable beers={beers}/>}
-            {loadingState === LoadingStates.ERROR && <Box data-qa="error" align="center">Something went wrong!</Box>}
+            {loadingState === LoadingStates.ERROR &&
+            <Box data-qa="error" align="center" color="text.primary">Something went wrong!</Box>}
         </Box>
     );
 };
